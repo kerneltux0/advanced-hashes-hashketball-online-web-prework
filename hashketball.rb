@@ -208,6 +208,7 @@ def big_shoe_rebounds
 				rebounds += info[:rebounds]
 			else
 				nil
+			end
 		end
 	end	
 	rebounds			
