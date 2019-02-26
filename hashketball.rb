@@ -194,16 +194,21 @@ def player_stats(player)
 end
 
 def big_shoe_rebounds
-  
-end
-
-def practice
 	shoe_sizes = []
+	rebounds = 0
 	game_hash.each do |location,team_info|
 		team_info[:players].each do |name,info|
 			shoe_sizes << info[:shoe]
 		end
 	end
+	shoe_sizes.sort!{|x,y| y <=> x}
+	game_hash.each do |location,team_info|
+		team_info[:players].each do |name,info|
+			if shoe_sizes[0] == info[:shoe]
+				rebounds += info[:rebounds]
+			else
+				nil
+		end
+	end	
+	rebounds			
 end
-
-practice
